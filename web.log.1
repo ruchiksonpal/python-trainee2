@@ -1,0 +1,558 @@
+[19/Mar/2020 07:11:49] ERROR [web:70] ("Field 'id' expected a number but got <built-in function id>.",)
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 1772, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'builtin_function_or_method'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 65, in check_language
+    status = Language.objects.filter(~Q(id=id), name=language_name)  # get status
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 904, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 923, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1350, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1370, in _add_q
+    child_clause, needed_inner = self._add_q(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1377, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1311, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1165, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/lookups.py", line 22, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/lookups.py", line 72, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 1774, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <built-in function id>.
+[19/Mar/2020 07:11:49] ERROR [web:49] ('duplicate key value violates unique constraint "Language_name_72020598_uniq"\nDETAIL:  Key (name)=(hindi) already exists.\n',)
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "Language_name_72020598_uniq"
+DETAIL:  Key (name)=(hindi) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 37, in language_add
+    add_language_obj = Language.objects.create(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 433, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/base.py", line 745, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/base.py", line 782, in save_base
+    updated = self._save_table(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/base.py", line 887, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/base.py", line 924, in _do_insert
+    return manager._insert(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 1204, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1391, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/backends/utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/backends/utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/backends/utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "Language_name_72020598_uniq"
+DETAIL:  Key (name)=(hindi) already exists.
+
+[19/Mar/2020 07:13:08] ERROR [web:70] ("Field 'id' expected a number but got <built-in function id>.",)
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 1772, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'builtin_function_or_method'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 65, in check_language
+    status = Language.objects.filter(~Q(id=id), name=language_name)  # get status
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 904, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 923, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1350, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1370, in _add_q
+    child_clause, needed_inner = self._add_q(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1377, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1311, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1165, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/lookups.py", line 22, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/lookups.py", line 72, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 1774, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <built-in function id>.
+[19/Mar/2020 07:13:08] ERROR [web:49] ('duplicate key value violates unique constraint "Language_name_72020598_uniq"\nDETAIL:  Key (name)=(hindi) already exists.\n',)
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "Language_name_72020598_uniq"
+DETAIL:  Key (name)=(hindi) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 37, in language_add
+    add_language_obj = Language.objects.create(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 433, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/base.py", line 745, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/base.py", line 782, in save_base
+    updated = self._save_table(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/base.py", line 887, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/base.py", line 924, in _do_insert
+    return manager._insert(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 1204, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1391, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/backends/utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/backends/utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/backends/utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "Language_name_72020598_uniq"
+DETAIL:  Key (name)=(hindi) already exists.
+
+[19/Mar/2020 07:17:44] ERROR [web:79] ("Field 'id' expected a number but got <built-in function id>.",)
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 1772, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'builtin_function_or_method'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 68, in check_language
+    status = Language.objects.filter(~Q(id=id), name=language_name)  # get status
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 904, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 923, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1350, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1370, in _add_q
+    child_clause, needed_inner = self._add_q(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1377, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1311, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1165, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/lookups.py", line 22, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/lookups.py", line 72, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 1774, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <built-in function id>.
+[19/Mar/2020 07:17:51] ERROR [web:79] ("Field 'id' expected a number but got <built-in function id>.",)
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 1772, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'builtin_function_or_method'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 68, in check_language
+    status = Language.objects.filter(~Q(id=id), name=language_name)  # get status
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 904, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 923, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1350, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1370, in _add_q
+    child_clause, needed_inner = self._add_q(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1377, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1311, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1165, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/lookups.py", line 22, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/lookups.py", line 72, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 1774, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <built-in function id>.
+[19/Mar/2020 07:18:04] ERROR [web:79] ("Field 'id' expected a number but got <built-in function id>.",)
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 1772, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'builtin_function_or_method'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 68, in check_language
+    status = Language.objects.filter(~Q(id=id), name=language_name)  # get status
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 904, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 923, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1350, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1370, in _add_q
+    child_clause, needed_inner = self._add_q(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1377, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1311, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1165, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/lookups.py", line 22, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/lookups.py", line 72, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 1774, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <built-in function id>.
+[19/Mar/2020 07:22:41] INFO [web:44] -----new cddfdf inserted successfully---
+[19/Mar/2020 07:22:57] INFO [web:120] ("Reverse for 'language_edit' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']",)
+[19/Mar/2020 07:23:13] INFO [web:111] language edit successfully, Language ID is = 75
+[19/Mar/2020 07:23:22] INFO [web:120] ("Reverse for 'language_edit' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']",)
+[19/Mar/2020 07:23:34] INFO [web:111] language edit successfully, Language ID is = 75
+[19/Mar/2020 07:24:21] INFO [web:44] -----new dsdsdsdsdsds inserted successfully---
+[19/Mar/2020 07:24:27] INFO [web:110] language edit successfully, Language ID is = 96
+[19/Mar/2020 07:24:33] INFO [web:119] ("Reverse for 'language_edit' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']",)
+[19/Mar/2020 07:28:56] INFO [web:120] ("Reverse for 'language_edit' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']",)
+[19/Mar/2020 07:30:00] INFO [web:120] ("Reverse for 'language_edit' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']",)
+[19/Mar/2020 07:30:53] INFO [web:44] -----new gfgfgfgf inserted successfully---
+[19/Mar/2020 07:30:58] INFO [web:120] ("Reverse for 'language_edit' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']",)
+[19/Mar/2020 08:36:04] INFO [web:120] ("Reverse for 'language_edit' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']",)
+[19/Mar/2020 08:37:10] INFO [web:44] -----new hindis inserted successfully---
+[19/Mar/2020 08:48:13] INFO [web:45] -----new hindisdsd inserted successfully---
+[19/Mar/2020 08:48:37] INFO [web:114] language edit successfully, Language ID is = 98
+[19/Mar/2020 08:58:58] INFO [web:114] language edit successfully, Language ID is = 11
+[19/Mar/2020 08:59:23] INFO [web:114] language edit successfully, Language ID is = 46
+[19/Mar/2020 09:00:01] INFO [web:114] language edit successfully, Language ID is = 96
+[19/Mar/2020 09:00:09] INFO [web:114] language edit successfully, Language ID is = 11
+[19/Mar/2020 09:00:34] INFO [web:114] language edit successfully, Language ID is = 46
+[19/Mar/2020 09:01:34] INFO [web:45] -----new dsdsdsdsd inserted successfully---
+[19/Mar/2020 09:01:46] INFO [web:114] language edit successfully, Language ID is = 100
+[19/Mar/2020 09:01:56] INFO [web:114] language edit successfully, Language ID is = 100
+[19/Mar/2020 09:02:02] INFO [web:114] language edit successfully, Language ID is = 46
+[19/Mar/2020 09:04:03] INFO [web:113] language edit successfully, Language ID is = 99
+[19/Mar/2020 09:05:04] INFO [web:113] language edit successfully, Language ID is = 99
+[19/Mar/2020 09:08:51] INFO [web:45] -----new hind inserted successfully---
+[19/Mar/2020 09:09:17] INFO [web:45] -----new dsdsds inserted successfully---
+[19/Mar/2020 09:09:30] INFO [web:89] language deleted successfully, Language ID is = 88
+[19/Mar/2020 09:09:32] INFO [web:89] language deleted successfully, Language ID is = 87
+[19/Mar/2020 09:09:33] INFO [web:89] language deleted successfully, Language ID is = 89
+[19/Mar/2020 09:09:34] INFO [web:89] language deleted successfully, Language ID is = 95
+[19/Mar/2020 09:09:34] INFO [web:89] language deleted successfully, Language ID is = 75
+[19/Mar/2020 09:09:36] INFO [web:89] language deleted successfully, Language ID is = 97
+[19/Mar/2020 09:09:38] INFO [web:89] language deleted successfully, Language ID is = 98
+[19/Mar/2020 09:09:38] INFO [web:89] language deleted successfully, Language ID is = 96
+[19/Mar/2020 09:09:40] INFO [web:89] language deleted successfully, Language ID is = 100
+[19/Mar/2020 09:09:43] INFO [web:89] language deleted successfully, Language ID is = 99
+[19/Mar/2020 09:09:44] INFO [web:89] language deleted successfully, Language ID is = 101
+[19/Mar/2020 09:09:46] INFO [web:89] language deleted successfully, Language ID is = 102
+[19/Mar/2020 09:09:52] INFO [web:45] -----new Gujarati inserted successfully---
+[19/Mar/2020 09:09:56] INFO [web:113] language edit successfully, Language ID is = 46
+[19/Mar/2020 09:10:10] INFO [web:113] language edit successfully, Language ID is = 103
+[19/Mar/2020 09:11:24] INFO [web:113] language edit successfully, Language ID is = 11
+[19/Mar/2020 09:14:03] INFO [web:123] ("'int' object has no attribute 'order_by'",)
+[19/Mar/2020 09:15:07] INFO [web:123] ("'int' object has no attribute 'order_by'",)
+[19/Mar/2020 09:16:16] INFO [web:123] ("'int' object has no attribute 'order_by'",)
+[19/Mar/2020 09:18:12] INFO [web:45] -----new z inserted successfully---
+[19/Mar/2020 09:19:29] INFO [web:45] -----new a inserted successfully---
+[19/Mar/2020 09:21:49] INFO [web:45] -----new Telugu inserted successfully---
+[19/Mar/2020 09:22:00] INFO [web:113] language edit successfully, Language ID is = 104
+[19/Mar/2020 09:22:04] INFO [web:113] language edit successfully, Language ID is = 106
+[19/Mar/2020 09:22:08] INFO [web:113] language edit successfully, Language ID is = 46
+[19/Mar/2020 09:22:39] INFO [web:113] language edit successfully, Language ID is = 104
+[19/Mar/2020 09:22:42] INFO [web:113] language edit successfully, Language ID is = 106
+[19/Mar/2020 09:22:46] INFO [web:113] language edit successfully, Language ID is = 46
+[19/Mar/2020 09:39:06] INFO [web:111] language edit successfully, Language ID is = 104
+[19/Mar/2020 09:39:14] INFO [web:111] language edit successfully, Language ID is = 104
+[19/Mar/2020 09:39:21] INFO [web:111] language edit successfully, Language ID is = 104
+[19/Mar/2020 09:41:26] INFO [web:120] ("Reverse for 'check_language' with no arguments not found. 1 pattern(s) tried: ['admin/check/language/(?P<id>[0-9]+)$']",)
+[19/Mar/2020 09:41:29] INFO [web:120] ("Reverse for 'check_language' with no arguments not found. 1 pattern(s) tried: ['admin/check/language/(?P<id>[0-9]+)$']",)
+[19/Mar/2020 09:41:31] INFO [web:120] ("Reverse for 'check_language' with no arguments not found. 1 pattern(s) tried: ['admin/check/language/(?P<id>[0-9]+)$']",)
+[19/Mar/2020 09:41:32] INFO [web:120] ("Reverse for 'check_language' with no arguments not found. 1 pattern(s) tried: ['admin/check/language/(?P<id>[0-9]+)$']",)
+[19/Mar/2020 09:41:33] INFO [web:120] ("Reverse for 'check_language' with no arguments not found. 1 pattern(s) tried: ['admin/check/language/(?P<id>[0-9]+)$']",)
+[19/Mar/2020 09:41:33] INFO [web:120] ("Reverse for 'check_language' with no arguments not found. 1 pattern(s) tried: ['admin/check/language/(?P<id>[0-9]+)$']",)
+[19/Mar/2020 09:41:34] INFO [web:120] ("Reverse for 'check_language' with no arguments not found. 1 pattern(s) tried: ['admin/check/language/(?P<id>[0-9]+)$']",)
+[19/Mar/2020 09:43:32] INFO [web:113] ("Reverse for 'check_language' with no arguments not found. 1 pattern(s) tried: ['admin/check/language/(?P<id>[0-9]+)$']",)
+[19/Mar/2020 11:11:02] ERROR [web:71] ("Field 'id' expected a number but got <built-in function id>.",)
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 1772, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'builtin_function_or_method'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 66, in check_language
+    status = Language.objects.filter(~Q(id=id), name=language_name)  # get status
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 904, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 923, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1350, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1370, in _add_q
+    child_clause, needed_inner = self._add_q(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1377, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1311, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1165, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/lookups.py", line 22, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/lookups.py", line 72, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 1774, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <built-in function id>.
+[19/Mar/2020 11:12:02] ERROR [web:49] ("check_language() missing 1 required positional argument: 'id'",)
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 34, in language_add
+    status = check_language(language_name)
+TypeError: check_language() missing 1 required positional argument: 'id'
+[19/Mar/2020 11:12:33] ERROR [web:71] ("Field 'id' expected a number but got <built-in function id>.",)
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 1772, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'builtin_function_or_method'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 66, in check_language
+    status = Language.objects.filter(~Q(id=id), name=language_name)  # get status
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 904, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 923, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1350, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1370, in _add_q
+    child_clause, needed_inner = self._add_q(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1377, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1311, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1165, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/lookups.py", line 22, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/lookups.py", line 72, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 1774, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <built-in function id>.
+[19/Mar/2020 11:12:33] ERROR [web:49] ('duplicate key value violates unique constraint "Language_name_72020598_uniq"\nDETAIL:  Key (name)=(hindi) already exists.\n',)
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "Language_name_72020598_uniq"
+DETAIL:  Key (name)=(hindi) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 37, in language_add
+    add_language_obj = Language.objects.create(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 433, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/base.py", line 745, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/base.py", line 782, in save_base
+    updated = self._save_table(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/base.py", line 887, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/base.py", line 924, in _do_insert
+    return manager._insert(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 1204, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1391, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/backends/utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/backends/utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/backends/utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "Language_name_72020598_uniq"
+DETAIL:  Key (name)=(hindi) already exists.
+
+[19/Mar/2020 11:12:36] ERROR [web:71] ("Field 'id' expected a number but got <built-in function id>.",)
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 1772, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'builtin_function_or_method'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 66, in check_language
+    status = Language.objects.filter(~Q(id=id), name=language_name)  # get status
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 904, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 923, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1350, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1370, in _add_q
+    child_clause, needed_inner = self._add_q(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1377, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1311, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1165, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/lookups.py", line 22, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/lookups.py", line 72, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 1774, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <built-in function id>.
+[19/Mar/2020 11:12:36] ERROR [web:49] ('duplicate key value violates unique constraint "Language_name_72020598_uniq"\nDETAIL:  Key (name)=(hindi) already exists.\n',)
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "Language_name_72020598_uniq"
+DETAIL:  Key (name)=(hindi) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 37, in language_add
+    add_language_obj = Language.objects.create(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 433, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/base.py", line 745, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/base.py", line 782, in save_base
+    updated = self._save_table(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/base.py", line 887, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/base.py", line 924, in _do_insert
+    return manager._insert(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 1204, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1391, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/backends/utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/backends/utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/backends/utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "Language_name_72020598_uniq"
+DETAIL:  Key (name)=(hindi) already exists.
+
+[19/Mar/2020 11:14:25] ERROR [web:70] ("'QuerySet' object has no attribute 'name'",)
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 66, in check_language
+    print("status_name---", status.name)
+AttributeError: 'QuerySet' object has no attribute 'name'
+[19/Mar/2020 11:14:25] INFO [web:102] language edit successfully, Language ID is = 105
+[19/Mar/2020 11:15:07] INFO [web:101] language edit successfully, Language ID is = 106
+[19/Mar/2020 11:17:02] INFO [web:42] -----new dsdsdsdsdsddsdd inserted successfully---
+[19/Mar/2020 11:20:38] INFO [web:108] language edit successfully, Language ID is = 106
+[19/Mar/2020 11:21:47] INFO [web:42] -----new dsdsdsdsdsdsdsdsd inserted successfully---
+[19/Mar/2020 11:22:09] INFO [web:42] -----new dsdsdsdsh inserted successfully---
+[19/Mar/2020 11:22:23] INFO [web:109] language edit successfully, Language ID is = 104
+[19/Mar/2020 12:11:22] INFO [web:118] ("Reverse for 'check_language' not found. 'check_language' is not a valid view function or pattern name.",)
+[19/Mar/2020 12:11:24] INFO [web:118] ("Reverse for 'check_language' not found. 'check_language' is not a valid view function or pattern name.",)
+[19/Mar/2020 12:11:25] INFO [web:118] ("Reverse for 'check_language' not found. 'check_language' is not a valid view function or pattern name.",)
+[19/Mar/2020 12:11:26] INFO [web:118] ("Reverse for 'check_language' not found. 'check_language' is not a valid view function or pattern name.",)
+[19/Mar/2020 12:11:36] INFO [web:118] ("Could not parse the remainder: '[0].name' from 'obj_language_edit[0].name'",)
+[19/Mar/2020 12:11:37] INFO [web:118] ("Could not parse the remainder: '[0].name' from 'obj_language_edit[0].name'",)
+[19/Mar/2020 12:11:38] INFO [web:118] ("Could not parse the remainder: '[0].name' from 'obj_language_edit[0].name'",)
+[19/Mar/2020 12:11:38] INFO [web:118] ("Could not parse the remainder: '[0].name' from 'obj_language_edit[0].name'",)
+[19/Mar/2020 12:11:39] INFO [web:118] ("Could not parse the remainder: '[0].name' from 'obj_language_edit[0].name'",)
+[19/Mar/2020 12:11:40] INFO [web:118] ("Could not parse the remainder: '[0].name' from 'obj_language_edit[0].name'",)
+[19/Mar/2020 12:13:16] INFO [web:118] ("Could not parse the remainder: '[0].name' from 'obj_language_edit[0].name'",)
+[19/Mar/2020 12:13:18] INFO [web:118] ("Could not parse the remainder: '[0].name' from 'obj_language_edit[0].name'",)
+[19/Mar/2020 12:13:21] INFO [web:118] ("Could not parse the remainder: '[0].name' from 'obj_language_edit[0].name'",)
+[19/Mar/2020 12:14:18] INFO [web:118] ("Reverse for 'check_language' not found. 'check_language' is not a valid view function or pattern name.",)
+[19/Mar/2020 12:14:19] INFO [web:118] ("Reverse for 'check_language' not found. 'check_language' is not a valid view function or pattern name.",)
+[19/Mar/2020 12:14:20] INFO [web:118] ("Reverse for 'check_language' not found. 'check_language' is not a valid view function or pattern name.",)
+[19/Mar/2020 12:14:20] INFO [web:118] ("Reverse for 'check_language' not found. 'check_language' is not a valid view function or pattern name.",)

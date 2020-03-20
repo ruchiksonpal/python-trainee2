@@ -1,0 +1,434 @@
+[19/Mar/2020 12:14:22] INFO [web:118] ("Reverse for 'check_language' not found. 'check_language' is not a valid view function or pattern name.",)
+[19/Mar/2020 12:15:19] INFO [web:117] ("Could not parse the remainder: '[0].name' from 'obj_language_edit[0].name'",)
+[19/Mar/2020 12:15:21] INFO [web:117] ("Could not parse the remainder: '[0].name' from 'obj_language_edit[0].name'",)
+[19/Mar/2020 12:15:22] INFO [web:117] ("Could not parse the remainder: '[0].name' from 'obj_language_edit[0].name'",)
+[19/Mar/2020 12:15:23] INFO [web:117] ("Could not parse the remainder: '[0].name' from 'obj_language_edit[0].name'",)
+[19/Mar/2020 12:15:23] INFO [web:117] ("Could not parse the remainder: '[0].name' from 'obj_language_edit[0].name'",)
+[19/Mar/2020 12:33:37] INFO [web:108] language edit successfully, Language ID is = 106
+[19/Mar/2020 12:34:01] INFO [web:108] language edit successfully, Language ID is = 106
+[19/Mar/2020 12:34:12] INFO [web:108] language edit successfully, Language ID is = 106
+[19/Mar/2020 12:34:19] INFO [web:108] language edit successfully, Language ID is = 104
+[19/Mar/2020 12:34:49] INFO [web:42] -----new hindis inserted successfully---
+[19/Mar/2020 12:36:28] INFO [web:109] language edit successfully, Language ID is = 104
+[19/Mar/2020 12:37:02] INFO [web:110] language edit successfully, Language ID is = 104
+[19/Mar/2020 12:38:55] ERROR [web:47] ("local variable 'language_name' referenced before assignment",)
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 42, in language_add
+    logger.info("-----new {} inserted successfully---".format(language_name))
+UnboundLocalError: local variable 'language_name' referenced before assignment
+[19/Mar/2020 12:39:13] ERROR [web:47] ("local variable 'language_name' referenced before assignment",)
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 42, in language_add
+    logger.info("-----new {} inserted successfully---".format(language_name))
+UnboundLocalError: local variable 'language_name' referenced before assignment
+[19/Mar/2020 12:39:15] INFO [web:42] -----new  inserted successfully---
+[19/Mar/2020 12:39:20] INFO [web:86] language deleted successfully, Language ID is = 113
+[19/Mar/2020 12:40:45] INFO [web:42] -----new  inserted successfully---
+[19/Mar/2020 12:40:52] INFO [web:86] language deleted successfully, Language ID is = 114
+[19/Mar/2020 12:42:02] INFO [web:42] -----new  inserted successfully---
+[19/Mar/2020 12:46:50] ERROR [web:60] ('tuple index out of range',)
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 54, in language_check
+    id = args[0]
+IndexError: tuple index out of range
+[19/Mar/2020 13:11:15] INFO [web:110] language edit successfully, Language ID is = 104
+[19/Mar/2020 14:09:59] INFO [web:111] language edit successfully, Language ID is = 104
+[19/Mar/2020 14:10:20] INFO [web:111] language edit successfully, Language ID is = 104
+[19/Mar/2020 14:12:49] ERROR [web:79] ("Field 'id' expected a number but got ''.",)
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 1772, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 69, in check_language
+    status = Language.objects.filter(~Q(id=id), name=language_name)  # get status
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 904, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 923, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1350, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1370, in _add_q
+    child_clause, needed_inner = self._add_q(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1377, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1311, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1165, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/lookups.py", line 22, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/lookups.py", line 72, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 1774, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got ''.
+[19/Mar/2020 14:12:57] ERROR [web:79] ("Field 'id' expected a number but got ''.",)
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 1772, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 69, in check_language
+    status = Language.objects.filter(~Q(id=id), name=language_name)  # get status
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 904, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 923, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1350, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1370, in _add_q
+    child_clause, needed_inner = self._add_q(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1377, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1311, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1165, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/lookups.py", line 22, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/lookups.py", line 72, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 1774, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got ''.
+[20/Mar/2020 04:16:29] ERROR [web:79] ("Field 'id' expected a number but got ''.",)
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 1772, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 69, in check_language
+    status = Language.objects.filter(~Q(id=id), name=language_name)  # get status
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 904, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 923, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1350, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1370, in _add_q
+    child_clause, needed_inner = self._add_q(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1377, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1311, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1165, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/lookups.py", line 22, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/lookups.py", line 72, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 1774, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got ''.
+[20/Mar/2020 04:16:40] ERROR [web:79] ("Field 'id' expected a number but got ''.",)
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 1772, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 69, in check_language
+    status = Language.objects.filter(~Q(id=id), name=language_name)  # get status
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 904, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 923, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1350, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1370, in _add_q
+    child_clause, needed_inner = self._add_q(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1377, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1311, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1165, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/lookups.py", line 22, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/lookups.py", line 72, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 1774, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got ''.
+[20/Mar/2020 04:17:00] INFO [web:111] language edit successfully, Language ID is = 116
+[20/Mar/2020 04:21:54] ERROR [web:74] ("Field 'id' expected a number but got ''.",)
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 1772, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 66, in check_language
+    status = Language.objects.filter(~Q(id=id), name=language_name)  # get status
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 904, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 923, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1350, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1370, in _add_q
+    child_clause, needed_inner = self._add_q(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1377, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1311, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1165, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/lookups.py", line 22, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/lookups.py", line 72, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 1774, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got ''.
+[20/Mar/2020 04:23:53] ERROR [web:74] ("Field 'id' expected a number but got ''.",)
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 1772, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 66, in check_language
+    status = Language.objects.filter(~Q(id=id), name=language_name)  # get status
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 904, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 923, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1350, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1370, in _add_q
+    child_clause, needed_inner = self._add_q(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1377, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1311, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1165, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/lookups.py", line 22, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/lookups.py", line 72, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 1774, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got ''.
+[20/Mar/2020 04:23:53] ERROR [web:74] ("Field 'id' expected a number but got ''.",)
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 1772, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 66, in check_language
+    status = Language.objects.filter(~Q(id=id), name=language_name)  # get status
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 904, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 923, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1350, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1370, in _add_q
+    child_clause, needed_inner = self._add_q(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1377, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1311, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1165, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/lookups.py", line 22, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/lookups.py", line 72, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 1774, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got ''.
+[20/Mar/2020 04:23:55] ERROR [web:74] ("Field 'id' expected a number but got ''.",)
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 1772, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 66, in check_language
+    status = Language.objects.filter(~Q(id=id), name=language_name)  # get status
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 904, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/query.py", line 923, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1350, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1370, in _add_q
+    child_clause, needed_inner = self._add_q(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1377, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1311, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1165, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/lookups.py", line 22, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/lookups.py", line 72, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/db/models/fields/__init__.py", line 1774, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got ''.
+[20/Mar/2020 04:33:43] INFO [web:102] language edit successfully, Language ID is = 116
+[20/Mar/2020 05:18:49] INFO [web:102] language edit successfully, Language ID is = 46
+[20/Mar/2020 05:19:03] INFO [web:102] language edit successfully, Language ID is = 46
+[20/Mar/2020 05:28:43] INFO [web:102] language edit successfully, Language ID is = 46
+[20/Mar/2020 05:30:20] INFO [web:102] language edit successfully, Language ID is = 46
+[20/Mar/2020 05:30:35] INFO [web:102] language edit successfully, Language ID is = 46
+[20/Mar/2020 06:15:50] INFO [web:102] language edit successfully, Language ID is = 11
+[20/Mar/2020 06:15:58] INFO [web:102] language edit successfully, Language ID is = 11
+[20/Mar/2020 06:16:09] INFO [web:82] language deleted successfully, Language ID is = 115
+[20/Mar/2020 06:16:16] INFO [web:82] language deleted successfully, Language ID is = 105
+[20/Mar/2020 06:16:19] INFO [web:82] language deleted successfully, Language ID is = 106
+[20/Mar/2020 06:16:21] INFO [web:82] language deleted successfully, Language ID is = 109
+[20/Mar/2020 06:16:23] INFO [web:82] language deleted successfully, Language ID is = 110
+[20/Mar/2020 06:16:24] INFO [web:82] language deleted successfully, Language ID is = 111
+[20/Mar/2020 06:16:39] ERROR [web:43] ("Reverse for 'language_edit' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']",)
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 39, in language_add
+    return redirect("language_edit")
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/shortcuts.py", line 41, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/shortcuts.py", line 131, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/urls/base.py", line 87, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/urls/resolvers.py", line 677, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'language_edit' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']
+[20/Mar/2020 06:16:47] ERROR [web:43] ("Reverse for 'language_edit' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']",)
+Traceback (most recent call last):
+  File "/home/ruchik.sonpal@9series.com/PycharmProjects/python-trainee/web/film/views.py", line 39, in language_add
+    return redirect("language_edit")
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/shortcuts.py", line 41, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/shortcuts.py", line 131, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/urls/base.py", line 87, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/home/ruchik.sonpal@9series.com/new_Venv/python-trainee/lib/python3.8/site-packages/django/urls/resolvers.py", line 677, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'language_edit' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']
+[20/Mar/2020 06:17:47] INFO [web:102] language edit successfully, Language ID is = 103
+[20/Mar/2020 06:17:57] INFO [web:102] language edit successfully, Language ID is = 103
+[20/Mar/2020 06:19:56] INFO [web:102] language edit successfully, Language ID is = 103
+[20/Mar/2020 06:20:04] INFO [web:110] ("Reverse for 'edit_language' not found. 'edit_language' is not a valid view function or pattern name.",)
+[20/Mar/2020 06:20:56] INFO [web:102] language edit successfully, Language ID is = 103
+[20/Mar/2020 06:21:03] INFO [web:110] ("Reverse for 'language_edit' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']",)
+[20/Mar/2020 06:23:35] INFO [web:82] language deleted successfully, Language ID is = 116
+[20/Mar/2020 06:23:37] INFO [web:82] language deleted successfully, Language ID is = 46
+[20/Mar/2020 06:23:41] INFO [web:82] language deleted successfully, Language ID is = 112
+[20/Mar/2020 06:23:42] INFO [web:82] language deleted successfully, Language ID is = 104
+[20/Mar/2020 06:23:48] INFO [web:102] language edit successfully, Language ID is = 103
+[20/Mar/2020 06:24:18] INFO [web:110] ("Reverse for 'language_edit' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']",)
+[20/Mar/2020 06:26:24] INFO [web:102] language edit successfully, Language ID is = 103
+[20/Mar/2020 06:26:44] INFO [web:102] language edit successfully, Language ID is = 103
+[20/Mar/2020 06:29:36] INFO [web:102] language edit successfully, Language ID is = 103
+[20/Mar/2020 06:29:42] INFO [web:110] ("Reverse for 'language_edit' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']",)
+[20/Mar/2020 06:30:34] INFO [web:110] ("Reverse for 'language_edit' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']",)
+[20/Mar/2020 06:32:03] INFO [web:102] language edit successfully, Language ID is = 103
+[20/Mar/2020 06:32:49] INFO [web:110] ("Reverse for 'language_edit' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']",)
+[20/Mar/2020 06:35:58] INFO [web:109] ("Reverse for 'language_edit' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']",)
+[20/Mar/2020 06:36:58] INFO [web:110] ("Reverse for 'language_edit' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']",)
+[20/Mar/2020 06:37:29] INFO [web:110] ("Reverse for 'language_edit' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']",)
+[20/Mar/2020 06:43:00] INFO [web:109] ("Reverse for 'language_edit' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']",)
+[20/Mar/2020 06:43:20] INFO [web:101] language edit successfully, Language ID is = 103
+[20/Mar/2020 06:43:25] INFO [web:109] ("Reverse for 'language_edit' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']",)
+[20/Mar/2020 06:49:00] INFO [web:109] ("Reverse for 'language_edit' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']",)
+[20/Mar/2020 06:50:38] INFO [web:109] ('duplicate key value violates unique constraint "Language_name_72020598_uniq"\nDETAIL:  Key (name)=(German) already exists.\n',)
+[20/Mar/2020 06:50:46] INFO [web:109] ('duplicate key value violates unique constraint "Language_name_72020598_uniq"\nDETAIL:  Key (name)=(German) already exists.\n',)
+[20/Mar/2020 06:51:10] INFO [web:109] ("Reverse for 'language_edit' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']",)
+[20/Mar/2020 06:52:05] INFO [web:109] ("Reverse for 'language_edit' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']",)
+[20/Mar/2020 06:52:32] INFO [web:101] language edit successfully, Language ID is = 103
+[20/Mar/2020 06:59:22] INFO [web:109] ("Reverse for 'language_edit' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']",)
+[20/Mar/2020 07:00:26] INFO [web:109] ("Reverse for 'language_edit' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']",)
+[20/Mar/2020 07:01:02] INFO [web:109] ("Reverse for 'language_edit' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']",)
+[20/Mar/2020 07:02:00] INFO [web:109] ("Reverse for 'language_edit' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']",)
+[20/Mar/2020 07:03:06] INFO [web:109] ("Reverse for 'language_edit' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']",)
+[20/Mar/2020 07:03:16] INFO [web:109] ("Reverse for 'language_edit' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']",)
+[20/Mar/2020 07:04:24] INFO [web:109] ("Reverse for 'language_edit' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']",)
+[20/Mar/2020 07:05:42] INFO [web:111] ("Reverse for 'language_edit' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']",)
+[20/Mar/2020 07:06:31] INFO [web:111] ("Reverse for 'language_edit' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']",)
+[20/Mar/2020 07:07:33] INFO [web:104] language edit successfully, Language ID is = 103
+[20/Mar/2020 07:07:44] INFO [web:110] ("Reverse for 'language_edit' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']",)
+[20/Mar/2020 07:08:15] INFO [web:110] ("Reverse for 'language_edit' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']",)
+[20/Mar/2020 07:08:53] INFO [web:110] ("Reverse for 'language_edits' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']",)
+[20/Mar/2020 07:11:09] INFO [web:111] ("Reverse for 'language_edit' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']",)
+[20/Mar/2020 07:11:20] INFO [web:111] ("Reverse for 'language_edit' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']",)
+[20/Mar/2020 07:11:26] INFO [web:105] language edit successfully, Language ID is = 103
+[20/Mar/2020 08:38:09] INFO [web:111] ("Reverse for 'language_edit' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']",)
+[20/Mar/2020 08:38:15] INFO [web:105] language edit successfully, Language ID is = 118
+[20/Mar/2020 08:40:27] INFO [web:79] language deleted successfully, Language ID is = 119
+[20/Mar/2020 08:40:29] INFO [web:79] language deleted successfully, Language ID is = 103
+[20/Mar/2020 08:43:36] INFO [web:103] language edit successfully, Language ID is = 118
+[20/Mar/2020 08:51:40] INFO [web:104] language edit successfully, Language ID is = 118
+[20/Mar/2020 08:51:50] INFO [web:110] ("Reverse for 'language_edit' with no arguments not found. 1 pattern(s) tried: ['admin/language/list/edit/(?P<id>[0-9]+)/$']",)
+[20/Mar/2020 08:53:46] INFO [web:104] language edit successfully, Language ID is = 118
+[20/Mar/2020 10:13:32] INFO [web:110] language edit successfully, Language ID is = 118
+[20/Mar/2020 10:13:39] INFO [web:110] language edit successfully, Language ID is = 118
+[20/Mar/2020 10:17:19] INFO [web:110] language edit successfully, Language ID is = 117
+[20/Mar/2020 10:17:32] INFO [web:110] language edit successfully, Language ID is = 117
+[20/Mar/2020 10:17:37] INFO [web:86] language deleted successfully, Language ID is = 122
+[20/Mar/2020 10:17:42] INFO [web:86] language deleted successfully, Language ID is = 120
+[20/Mar/2020 10:17:43] INFO [web:86] language deleted successfully, Language ID is = 121
+[20/Mar/2020 10:17:43] INFO [web:86] language deleted successfully, Language ID is = 118
+[20/Mar/2020 10:17:48] INFO [web:110] language edit successfully, Language ID is = 117
+[20/Mar/2020 10:48:02] INFO [web:110] language edit successfully, Language ID is = 123
+[20/Mar/2020 12:07:35] INFO [web:87] language deleted successfully, Language ID is = 123
+[20/Mar/2020 12:07:40] INFO [web:87] language deleted successfully, Language ID is = 124
+[20/Mar/2020 12:45:39] INFO [web:109] language edit successfully, Language ID is = 117
+[20/Mar/2020 12:45:44] INFO [web:87] language deleted successfully, Language ID is = 125
+[20/Mar/2020 12:45:51] INFO [web:109] language edit successfully, Language ID is = 117
+[20/Mar/2020 13:00:43] INFO [web:127] actor deleted successfully, Actor ID is = 1
+[20/Mar/2020 13:00:44] INFO [web:127] actor deleted successfully, Actor ID is = 2
+[20/Mar/2020 13:01:21] INFO [web:127] actor deleted successfully, Actor ID is = 3
+[20/Mar/2020 13:03:27] INFO [web:127] actor deleted successfully, Actor ID is = 4
+[20/Mar/2020 13:04:21] INFO [web:127] actor deleted successfully, Actor ID is = 5
+[20/Mar/2020 13:07:26] INFO [web:127] actor deleted successfully, Actor ID is = 6
+[20/Mar/2020 13:08:47] INFO [web:127] actor deleted successfully, Actor ID is = 7
+[20/Mar/2020 13:18:27] INFO [web:174] ("Actor has no field named 'first_ame'",)
+[20/Mar/2020 13:18:43] INFO [web:174] ("Actor has no field named 'first_ame'",)
+[20/Mar/2020 13:19:44] INFO [web:169] actor edit successfully, Language ID is = 8
+[20/Mar/2020 13:19:52] INFO [web:169] actor edit successfully, Language ID is = 9
+[20/Mar/2020 13:20:19] INFO [web:169] actor edit successfully, Language ID is = 8
+[20/Mar/2020 13:20:27] INFO [web:169] actor edit successfully, Language ID is = 8
+[20/Mar/2020 13:20:32] INFO [web:169] actor edit successfully, Language ID is = 8
+[20/Mar/2020 13:23:55] INFO [web:169] actor edit successfully, Language ID is = 10
